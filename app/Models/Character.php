@@ -21,4 +21,9 @@ class Character extends Model
         'voice_actor',
         'character_description',
     ];
+
+    public function unit()
+    {
+        return $this->belongsTo(Unit::class);
+    }
 }
