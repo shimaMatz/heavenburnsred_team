@@ -14,6 +14,7 @@ class AdminMenuSeeder extends Seeder
      */
     public function run(): void
     {
+
         $menus = [
             [
                 'title' => 'ダッシュボード',
@@ -25,7 +26,15 @@ class AdminMenuSeeder extends Seeder
             ],
             [
                 'title' => 'コンテンツ管理',
-                'url' => '/admin/content',
+                'url' => '/admin/contents',
+            ],
+            [
+                'title' => 'キャラクター管理',
+                'url' => '/admin/characters',
+            ],
+            [
+                'title' => 'スタイル管理',
+                'url' => '/admin/styles',
             ],
         ];
 

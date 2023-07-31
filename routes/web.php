@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CharacterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,10 @@ Route::group(['middleware' => ['auth', 'can:admin-higher']], function () {
     Route::get('/admin/users', [UserController::class, 'index'])->name('users.index');
     Route::get('/admin/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
     Route::put('/admin/users/{id}', [UserController::class, 'update'])->name('users.update');
+
+    Route::get('/admin/characters', [CharacterController::class, 'index'])->name('characters.index');
+    Route::get('/admin/characters/{id}/edit', [CharacterController::class, 'edit'])->name('characters.edit');
+    Route::put('/admin/characters/{id}', [CharacterController::class, 'update'])->name('characters.update');
 });
 
 require __DIR__ . '/auth.php';
