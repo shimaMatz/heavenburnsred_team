@@ -26,4 +26,9 @@ class Character extends Model
     {
         return $this->belongsTo(Unit::class);
     }
+
+    public function styles()
+    {
+        return $this->hasMany(Style::class);
+    }
 }

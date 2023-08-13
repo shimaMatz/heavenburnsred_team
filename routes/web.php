@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CharacterController;
+use App\Http\Controllers\MasterController;
+use App\Http\Controllers\StyleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,8 +24,6 @@ Route::get('/', function () {
 });
 
 Route::get('dashboard', [AdminController::class, 'showDashboard'])->middleware(['auth', 'verified'])->name('dashboard');
-
-
 
 //一般ユーザー
 Route::group(['middleware' => ['auth', 'can:user-higher']], function () {
@@ -46,6 +46,10 @@ Route::group(['middleware' => ['auth', 'can:admin-higher']], function () {
     Route::get('/admin/characters', [CharacterController::class, 'index'])->name('characters.index');
     Route::get('/admin/characters/{id}/edit', [CharacterController::class, 'edit'])->name('characters.edit');
     Route::put('/admin/characters/{id}', [CharacterController::class, 'update'])->name('characters.update');
+
+    Route::get('/admin/masters', [MasterController::class, 'index'])->name('masters.index');
+
+    Route::get('/admin/styles', [StyleController::class, 'index'])->name('styles.index');
 });
 
 require __DIR__ . '/auth.php';

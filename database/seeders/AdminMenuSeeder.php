@@ -14,19 +14,13 @@ class AdminMenuSeeder extends Seeder
      */
     public function run(): void
     {
+        // 既存のデータを全て削除
+        AdminMenu::truncate();
 
         $menus = [
             [
-                'title' => 'ダッシュボード',
-                'url' => '/admin/dashboard',
-            ],
-            [
                 'title' => 'ユーザー管理',
                 'url' => '/admin/users',
-            ],
-            [
-                'title' => 'コンテンツ管理',
-                'url' => '/admin/contents',
             ],
             [
                 'title' => 'キャラクター管理',
@@ -35,6 +29,10 @@ class AdminMenuSeeder extends Seeder
             [
                 'title' => 'スタイル管理',
                 'url' => '/admin/styles',
+            ],
+            [
+                'title' => 'マスタ管理',
+                'url' => '/admin/masters',
             ],
         ];
 
