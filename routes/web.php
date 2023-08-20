@@ -50,6 +50,10 @@ Route::group(['middleware' => ['auth', 'can:admin-higher']], function () {
     Route::get('/admin/masters', [MasterController::class, 'index'])->name('masters.index');
 
     Route::get('/admin/styles', [StyleController::class, 'index'])->name('styles.index');
+    Route::get('/admin/styles/create', [StyleController::class, 'create'])->name('styles.create');
+    Route::post('/admin/styles', [StyleController::class, 'store'])->name('styles.store');
+    Route::get('/admin/styles/{id}/edit', [StyleController::class, 'edit'])->name('styles.edit');
+    Route::put('/admin/styles/{id}', [StyleController::class, 'update'])->name('styles.update');
 });
 
 require __DIR__ . '/auth.php';

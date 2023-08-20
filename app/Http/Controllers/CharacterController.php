@@ -10,7 +10,7 @@ class CharacterController extends Controller
 {
     public function index()
     {
-        $characters = Character::all();
+        $characters = Character::orderby('id', 'asc')->get();
         $units = Unit::all();
         return view('characters.index', compact('characters', 'units'));
     }

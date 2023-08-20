@@ -13,6 +13,7 @@ class Passives2Seeder extends Seeder
      */
     public function run(): void
     {
+        Passives2::truncate();
         Passives2::create(['name' => '先駆', 'description' => 'ターン開始時、前衛にいると後衛のSP+1']);
         Passives2::create(['name' => '勇気', 'description' => '行動開始時に前衛＆DP50％以上のとき、自身のスキル攻撃力+15％']);
         Passives2::create(['name' => '勇猛', 'description' => '行動開始時に前衛＆DP100％以上のとき、自身のスキル攻撃力+30％']);

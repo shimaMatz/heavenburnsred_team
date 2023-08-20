@@ -13,6 +13,7 @@ class Passives1Seeder extends Seeder
      */
     public function run(): void
     {
+        Passives1::truncate();
         Passives1::create(['name' => '火の波動', 'description' => '味方全体の火属性スキル攻撃力を常時+10%']);
         Passives1::create(['name' => '氷の波動', 'description' => '味方全体の氷属性スキル攻撃力を常時+10%']);
         Passives1::create(['name' => '雷の波動', 'description' => '味方全体の雷属性スキル攻撃力を常時+10%']);

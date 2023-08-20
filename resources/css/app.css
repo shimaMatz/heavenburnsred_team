@@ -1,3 +1,7 @@
+/* 独自のスタイルを読み込む */
+@import url( 'styles.css');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -13,42 +13,17 @@ class UnitsSeeder extends Seeder
      */
     public function run(): void
     {
-
-        $units = [
-            [
-                'name' => '31A',
-            ],
-            [
-                'name' => '31B',
-            ],
-            [
-                'name' => '31C',
-            ],
-            [
-                'name' => '31D',
-            ],
-            [
-                'name' => '31E',
-            ],
-            [
-                'name' => '31F',
-            ],
-            [
-                'name' => '31X',
-            ],
-            [
-                'name' => '30G',
-            ],
-            [
-                'name' => 'AngelBeats!',
-            ],
-            [
-                'name' => '司令部',
-            ],
-        ];
-
-        foreach ($units as $unit) {
-            Unit::create($unit);
-        }
+        // 既存のデータを全て削除
+        Unit::truncate();
+        Unit::create(['name' => '31A']);
+        Unit::create(['name' => '31B']);
+        Unit::create(['name' => '31C']);
+        Unit::create(['name' => '31D']);
+        Unit::create(['name' => '31E']);
+        Unit::create(['name' => '31F']);
+        Unit::create(['name' => '31X']);
+        Unit::create(['name' => '30G']);
+        Unit::create(['name' => 'AngelBeats!']);
+        Unit::create(['name' => '司令部']);
     }
 }

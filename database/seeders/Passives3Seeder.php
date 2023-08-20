@@ -13,6 +13,7 @@ class Passives3Seeder extends Seeder
      */
     public function run(): void
     {
+        Passives3::truncate();
         Passives3::create(['name' => 'くじけぬ心', 'description' => 'ターン開始時、前衛＆ブレイク状態のとき、自身のDPを復活(1回)']);
         Passives3::create(['name' => '侵食', 'description' => '自身がかけた防御力ダウンの効果量+25%']);
         Passives3::create(['name' => '光の強威', 'description' => '行動開始時に前衛にいると自身の光属性のスキル攻撃力+25%']);

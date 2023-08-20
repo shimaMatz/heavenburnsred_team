@@ -68,7 +68,7 @@ class CharactersSeeder extends Seeder
             ['name' => '小笠原緋雨', 'unit_id' => 8, 'seraphim_code' => '寄らば斬る！', 'seraph' => 'Kazabana', 'first_person' => 'わたし', 'birthday' => '3月21日', 'height' => '138cm', 'birthplace' => '千葉', 'voice_actor' => '嶺内ともみ、櫻井海亜', 'character_description' => '剣の道に生きる３０Ｇ部隊最年少の少女。孤高の剣士を気取る。自分が年下なのを気にしていて、ことあるごとに先輩風を吹かすところがある。３分以上戦えないという設定を自分に課しているおかしな子。剣術以外のことで褒められ慣れていないので、すぐにテンパる。',],
             ['name' => '蔵里見', 'unit_id' => 8, 'seraphim_code' => '五穀豊穣、刈り入れ時だね！', 'seraph' => 'TwilightEmber', 'first_person' => 'あたい', 'birthday' => '6月18日', 'height' => '172cm', 'birthplace' => '秋田', 'voice_actor' => '井澤美香子', 'character_description' => 'お米に対して尋常ならざる愛着と技術を持っている。トロピカル巻きやノスタルジックにぎりなるグルメを生み出し、基地内でも人気を博している。月城の戦いのサポート役を買って出ている。余裕たっぷりを装っているが、茅森に関わると、翻弄されまくり、キャラすらもぶれる。',],
         ];
-
+        Character::truncate();
         foreach ($characters as $character) {
             Character::create($character);
         }

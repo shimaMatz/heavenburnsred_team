@@ -1,0 +1,23 @@
+  /* ラジオボタンのスタイル */
+  .radio-button {
+    display: inline-block;
+    border: 2px solid red; /* 枠の色 */
+    background-color: white; /* 背景色 */
+    border-radius: 10px; /* 角丸の程度 */
+    padding: 10px 20px; /* パディング（テキストと枠の間のスペース） */
+    color: red; /* テキストの色 */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* 色変更のアニメーション */
+  }
+
+  /* ボタンが選択されている場合のスタイル */
+  .radio-button.selected {
+    background-color: red; /* 背景色 */
+    color: white; /* テキストの色 */
+  }
+
+  /* ボタンが押された時のスタイル */
+  .radio-button:active {
+    background-color: darkred; /* 背景色 */
+    color: white; /* テキストの色 */
+  }
