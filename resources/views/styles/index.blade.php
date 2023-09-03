@@ -44,8 +44,11 @@
                             @foreach ($styles as $style)
                                 <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                                     <th scope="row"
-                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        class="px-3 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                         {{ $style->rarity->name }}
+                                        {{-- <div class="px-1 py-1">
+                                            <img src="{{ asset($style->rarity->image_path) }}" alt="Your Image">
+                                        </div> --}}
                                     </th>
                                     <td class="px-6 py-4">
                                         {{ $style->character->name }}

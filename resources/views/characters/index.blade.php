@@ -24,6 +24,9 @@
                                     所属部隊
                                 </th>
                                 <th scope="col" class="px-6 py-3">
+
+                                </th>
+                                <th scope="col" class="px-6 py-3">
                                     名前
                                 </th>
                                 <th scope="col" class="px-6 py-3">
@@ -45,7 +48,12 @@
                                 <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                                     <th scope="row"
                                         class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        {{ $character->unit->name }}
+                                        <img width="50" src="{{ asset($character->unit->image_path) }}"
+                                            alt="Unit Image">
+                                    </th>
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <img width="50" src="{{ asset($character->image_path) }}" alt="Character Image">
                                     </th>
                                     <td class="px-6 py-4">
                                         {{ $character->name }}

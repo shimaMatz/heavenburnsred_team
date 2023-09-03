@@ -49,7 +49,8 @@
                         {{-- レアリティ --}}
                         <div class="mb-6">
                             <label for="rarity_id"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">レアリティ</label>
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">レアリティ <span
+                                    class="text-red-500">*</label>
                             <div class="flex">
                                 @foreach ($rarities as $rarity)
                                     <label class="cursor-pointer flex items-center mr-4">
@@ -66,7 +67,8 @@
                         {{-- スタイル名 --}}
                         <div class="mb-6">
                             <label for="style_name"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">スタイル名</label>
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">スタイル名 <span
+                                    class="text-red-500">*</label>
                             <input type="name" id="style_name" name="style_name"
                                 class="bg-white-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 required value="{{ $style->style_name }}">
@@ -83,7 +85,7 @@
                                         <input type="radio" name="role_id" value="{{ $role->id }}"
                                             class="form-radio text-stone-700"
                                             {{ $role->id === $style->role_id ? 'checked' : '' }}>
-                                        <span class="ml-2 text-stone-700">{{ $role->en_name }}</span>
+                                        <span class="ml-2 text-stone-700">{{ $role->name }}</span>
                                     </label>
                                 @endforeach
                             </div>
@@ -129,7 +131,7 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                 @foreach ($passive1 as $passive_one)
                                     <option value="{{ $passive_one->id }}"
-                                        {{ $passive_one->id === $style->$passive1 ? 'selected' : '' }}>
+                                        {{ $passive_one->id === $style->passive_1 ? 'selected' : '' }}>
                                         {{ $passive_one->name }}
                                     </option>
                                 @endforeach
@@ -144,7 +146,7 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                 @foreach ($passive2 as $passive_two)
                                     <option value="{{ $passive_two->id }}"
-                                        {{ $passive_two->id === $style->$passive2 ? 'selected' : '' }}>
+                                        {{ $passive_two->id === $style->passive_2 ? 'selected' : '' }}>
                                         {{ $passive_two->name }}
                                     </option>
                                 @endforeach
@@ -159,7 +161,7 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                 @foreach ($passive3 as $passive_three)
                                     <option value="{{ $passive_three->id }}"
-                                        {{ $passive_three->id === $style->$passive3 ? 'selected' : '' }}>
+                                        {{ $passive_three->id === $style->passive_3 ? 'selected' : '' }}>
                                         {{ $passive_three->name }}
                                     </option>
                                 @endforeach

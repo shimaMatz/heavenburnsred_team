@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('styles', function (Blueprint $table) {
-            $table->unsignedBigInteger('skill_id')->nullable()->after('element_id');
-            $table->unsignedBigInteger('exclusive_skill_id')->nullable()->after('skill_id');
+            $table->bigInteger('skill_id')->nullable()->after('element_id');
+            $table->bigInteger('exclusive_skill_id')->nullable()->after('skill_id');
 
             $table->foreign('skill_id')->references('id')->on('skills');
             $table->foreign('exclusive_skill_id')->references('id')->on('skills');

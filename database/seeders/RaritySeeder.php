@@ -17,8 +17,8 @@ class RaritySeeder extends Seeder
         // 既存のデータを全て削除
         Rarity::truncate();
 
-        Rarity::create(['name' => 'SS', 'color' => 'amber-300']);
-        Rarity::create(['name' => 'S', 'color' => 'sky-300']);
-        Rarity::create(['name' => 'A', 'color' => 'red-500']);
+        Rarity::create(['name' => 'SS', 'color' => 'amber-300', 'image_path' => 'images/rarities/ss.png']);
+        Rarity::create(['name' => 'S', 'color' => 'sky-300', 'image_path' => 'images/rarities/s.png']);
+        Rarity::create(['name' => 'A', 'color' => 'red-500', 'image_path' => 'images/rarities/a.png']);
     }
 }

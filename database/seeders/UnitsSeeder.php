@@ -15,14 +15,14 @@ class UnitsSeeder extends Seeder
     {
         // 既存のデータを全て削除
         Unit::truncate();
-        Unit::create(['name' => '31A']);
-        Unit::create(['name' => '31B']);
-        Unit::create(['name' => '31C']);
-        Unit::create(['name' => '31D']);
-        Unit::create(['name' => '31E']);
-        Unit::create(['name' => '31F']);
-        Unit::create(['name' => '31X']);
-        Unit::create(['name' => '30G']);
+        Unit::create(['name' => '31A', 'image_path' => 'images/units/img_logo31a.png']);
+        Unit::create(['name' => '31B', 'image_path' => 'images/units/img_logo31b.png']);
+        Unit::create(['name' => '31C', 'image_path' => 'images/units/img_logo31c.png']);
+        Unit::create(['name' => '31D', 'image_path' => 'images/units/img_logo31d.png']);
+        Unit::create(['name' => '31E', 'image_path' => 'images/units/img_logo31e.png']);
+        Unit::create(['name' => '31F', 'image_path' => 'images/units/img_logo31f.png']);
+        Unit::create(['name' => '31X', 'image_path' => 'images/units/img_logo31x.png']);
+        Unit::create(['name' => '30G', 'image_path' => 'images/units/img_logo30g.png']);
         Unit::create(['name' => 'AngelBeats!']);
         Unit::create(['name' => '司令部']);
     }

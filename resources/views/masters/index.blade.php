@@ -21,17 +21,20 @@
                     <div class="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
                         <!-- Card -->
                         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                            <h2 class="mb-4 text-2xl font-semibold leadi">レアリティ</h2>
+                            <h2 class="mb-4 text-xl font-semibold leadi">レアリティ</h2>
                             <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                                     <thead
                                         class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                         <tr>
                                             <th scope="col" class="px-6 py-3">
-                                                id
+                                                名前
                                             </th>
                                             <th scope="col" class="px-6 py-3">
-                                                名前
+                                                画像
+                                            </th>
+                                            <th scope="col" class="px-6 py-3">
+                                                ACTION
                                             </th>
                                         </tr>
                                     </thead>
@@ -40,10 +43,14 @@
                                             <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                                                 <th scope="row"
                                                     class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                    {{ $rarity->id }}
-                                                </th>
-                                                <td class="px-6 py-4">
                                                     {{ $rarity->name }}
+                                                </th>
+                                                <td class="px-3 py-3">
+                                                    <img src="{{ asset($rarity->image_path) }}" alt="Your Image">
+                                                </td>
+                                                <td class="px-6 py-4">
+                                                    <a href="/admin/rarities/{{ $rarity->id }}/edit"
+                                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -55,17 +62,17 @@
 
                         <!-- Card -->
                         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                            <h2 class="mb-4 text-2xl font-semibold leadi">役割</h2>
+                            <h2 class="mb-4 text-xl font-semibold leadi">役割</h2>
                             <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                                     <thead
                                         class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                         <tr>
                                             <th scope="col" class="px-6 py-3">
-                                                id
+                                                名前
                                             </th>
                                             <th scope="col" class="px-6 py-3">
-                                                名前
+                                                ACTION
                                             </th>
                                         </tr>
                                     </thead>
@@ -74,10 +81,11 @@
                                             <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                                                 <th scope="row"
                                                     class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                    {{ $role->id }}
+                                                    {{ $role->name }}
                                                 </th>
                                                 <td class="px-6 py-4">
-                                                    {{ $role->name }}
+                                                    <a href="/admin/roles/{{ $role->id }}/edit"
+                                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -89,29 +97,29 @@
 
                         <!-- Card -->
                         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                            <h2 class="mb-4 text-2xl font-semibold leadi">武器属性</h2>
+                            <h2 class="mb-4 text-xl font-semibold leadi">武器属性</h2>
                             <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                                     <thead
                                         class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                         <tr>
                                             <th scope="col" class="px-6 py-3">
-                                                id
+                                                名前
                                             </th>
                                             <th scope="col" class="px-6 py-3">
-                                                名前
+                                                ACTION
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($weaponAttributes as $weaponAttribute)
                                             <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                                                <th scope="row"
-                                                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                    {{ $weaponAttribute->id }}
-                                                </th>
                                                 <td class="px-6 py-4">
                                                     {{ $weaponAttribute->name }}
+                                                </td>
+                                                <td class="px-6 py-4">
+                                                    <a href="/admin/weaponAttributes/{{ $weaponAttribute->id }}/edit"
+                                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -125,17 +133,17 @@
 
                         <!-- Card -->
                         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                            <h2 class="mb-4 text-2xl font-semibold leadi">属性</h2>
+                            <h2 class="mb-4 text-xl font-semibold leadi">属性</h2>
                             <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                                     <thead
                                         class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                         <tr>
                                             <th scope="col" class="px-6 py-3">
-                                                id
+                                                名前
                                             </th>
                                             <th scope="col" class="px-6 py-3">
-                                                名前
+                                                ACTION
                                             </th>
                                         </tr>
                                     </thead>
@@ -144,10 +152,11 @@
                                             <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                                                 <th scope="row"
                                                     class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                    {{ $element->id }}
+                                                    {{ $element->name }}
                                                 </th>
                                                 <td class="px-6 py-4">
-                                                    {{ $element->name }}
+                                                    <a href="/admin/elements/{{ $element->id }}/edit"
+                                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                                                 </td>
                                             </tr>
                                         @endforeach
